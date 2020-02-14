@@ -7,7 +7,8 @@
 
 #include "01_print.h"
 
-int main(void) {
+int main(void)
+{
     printFormat();
     return EXIT_SUCCESS;
 }
