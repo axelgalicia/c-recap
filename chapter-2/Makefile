@@ -2,7 +2,7 @@
 # Names, Files
 #---------------------------------------------------------------------
 OUTPUT_DIRECTORY := bin/
-BINARY := print
+BINARY := sum
 #---------------------------------------------------------------------
 # Executables
 #---------------------------------------------------------------------
@@ -20,8 +20,8 @@ clean:
 create_bin:
 	$(MD) -p $(OUTPUT_DIRECTORY)
 
-compile: main.c 01_print.c
-	clang -o $(OUTPUT_DIRECTORY)/$(BINARY) main.c 01_print.c
+compile: main.c sum.c
+	clang -o $(OUTPUT_DIRECTORY)/$(BINARY) main.c sum.c
 
 execute:
 	$(EXEC)/$(OUTPUT_DIRECTORY)/$(BINARY)
