@@ -10,48 +10,31 @@
 #endif
 
 
-void printSquare(unsigned long long value);
-void printBinary(long decimal);
+void print_square(unsigned long long value);
+void print_binary_in_colors(long decimal);
 void red();
 void green();
 void blue();
-void whiteBackground();
-void resetColor();
-void test();
+void white_background();
+void reset_color();
 
 int main() {
-
-    uint8_t myMini = 253;
 
 
     printf("\n\nStandard C flag __STDC__ = %d\n\n", __STDC__);
     printf("\n Standard C version flag __STDC__VERSION__ = %ld\n\n", __STDC_VERSION__);
     printf("\n Flag __x86_64__ = %d\n\n", __x86_64__);
     printf("\n COLON definition value: %d \n\n", COLON);
-    myMini += 1;
-    //printf("\n Number %d defined as int8_t adding 1 will overflow: \n\n %d", myMini, myMini);
-   
-    //printSquare(6);
-    // for (long z = 0; z < 1000 ; z ++) {
-    //             printBinary(z);
-    //             printf("\n");
-    // }
-    
-    //printf("\n\n %s \n\n", __func__);
 
-   // test();
-
-   for(int g=0; g < 100 ; g++) {
-        int m = 3;
-        int *p = &m;
-        printf("\n\n%p\n\n", &p);
-   }
-
-
+    // printSquare(6);
+    for (long z = 0; z < 1000 ; z ++) {
+                print_binary_in_colors(z);
+                printf("\n");
+    }
 
 }
 
-void printSquare(unsigned long long value) {
+void print_square(unsigned long long value) {
     long result = 1;
     for (size_t i = 0; i < value; i++) {
         printf("\n%ld\n\n", result);
@@ -59,7 +42,7 @@ void printSquare(unsigned long long value) {
     }
 }
 
-void printBinary(long decimal) {
+void print_binary_in_colors(long decimal) {
     int bits = 32 - 1;
     printf("%10ld is : ", decimal);
     for(int i = bits; i >= 0; i--) {
@@ -68,10 +51,10 @@ void printBinary(long decimal) {
             blue();
             printf("  ");
         } else {
-            whiteBackground();
+            white_background();
             printf("  ");
         }
-        resetColor();
+        reset_color();
     }
 }
 
@@ -81,11 +64,10 @@ void red() {
 }
 
 void green() {
-    // printf("\033[1;92m");
     printf("\033[1;102m");
 }
 
-void whiteBackground() {
+void white_background() {
     printf("\033[1;47m");
 }
 
@@ -93,13 +75,6 @@ void blue() {
     printf("\33[1;44m");
 }
 
-void resetColor() {
+void reset_color() {
     printf("\033[0m");
-}
-
-void test() {
-    int z[] = {1,2,3,4,5,6,7,8,9};
-    for (int m = 0 ; z[m] != '\0'; m++) {
-        printf("%d\n",z[m]);
-    }
 }

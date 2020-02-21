@@ -2,8 +2,7 @@
 
 #include "01_print.h"
 
-void printFormat()
-{
+void printFormat() {
     double A[5] = {
         [0] = 11.0,
         [1] = 2.9,
@@ -11,8 +10,7 @@ void printFormat()
         [4] = .00008,
     };
 
-    for (size_t i = 0; i < 5; i++)
-    {
+    for (size_t i = 0; i < 5; i++) {
         printf("Element %zu is %g, \tits square is %g\n", i, A[i], A[i] * A[i]);
     }
 }
